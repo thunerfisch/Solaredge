@@ -43,10 +43,12 @@ class Solaredge extends IPSModule
 
         $this->ConnectParent(MODBUS_INSTANCES);
 
-        $this->RegisterPropertyInteger("Poller", 0);
-        $this->RegisterPropertyInteger("Phase", 1);
+        $this->RegisterPropertyBoolean('active', 'true');
+        $this->RegisterPropertyString('hostIp', '');
+        $this->RegisterPropertyInteger('hostPort', '502');
+        $this->RegisterPropertyInteger('hostmodbusDevice', '1');
+        $this->RegisterPropertyInteger('pollCycle', '60');
 
-        $this->RegisterTimer("Poller", 0, "CGEM24_RequestRead(\$_IPS['TARGET']);");
     }
 
     public function Destroy()
