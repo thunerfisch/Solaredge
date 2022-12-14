@@ -239,8 +239,10 @@ class Solaredge extends IPSModule
             }
 
             $this->createModbusInstances($inverterModelRegister_array, $categoryId, $gatewayId, $pollCycle);
+        }
 
     }
+
     private function createModbusInstances($modelRegister_array, $parentId, $gatewayId, $pollCycle, $uniqueIdent = "")
     {
         // Workaround für "InstanceInterface not available" Fehlermeldung beim Server-Start...
