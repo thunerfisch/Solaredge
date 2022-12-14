@@ -26,6 +26,12 @@ if (!defined('IMR_START_REGISTER'))
 	define("IMR_SF", 8);
 }
 
+// Offset von Register (erster Wert 1) zu Adresse (erster Wert 0) ist -1
+if (!defined('MODBUS_REGISTER_TO_ADDRESS_OFFSET'))
+{
+	define("MODBUS_REGISTER_TO_ADDRESS_OFFSET", -1);
+}
+
 
 class Solaredge extends IPSModule
 {
